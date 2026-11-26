@@ -142,3 +142,103 @@ All sample student, guardian and teacher records, including names, addresses, co
 ## Implementation Note
 
 This repository preserves the original academic database design and SQL implementation developed in 2023.
+
+
+## Project Structure
+
+```text
+school-management-database/
+├── assets/
+│   └── School.png
+├── database/
+│   ├── Schooldbdump.sql
+│   └── users.sql
+├── docs/
+│   └── SchoolDB_team26_Corrected_public.pdf
+├── models/
+│   └── School.mwb
+├── queries/
+│   ├── query1.sql
+│   ├── query2.sql
+│   ├── query3.sql
+│   ├── query4.sql
+│   ├── query5.sql
+│   ├── query6.sql
+│   ├── query7.sql
+│   └── query8.sql
+└── README.md
+```
+
+## Prerequisites
+
+- MySQL Server 8.0
+- MySQL Workbench
+- MySQL user account with appropriate database privileges
+
+## Installation
+
+Clone the repository:
+
+```bash
+git clone https://github.com/FilipposKanlis/school-management-database.git
+```
+
+Open MySQL Workbench and connect to your local MySQL Server.
+
+Open and execute the following SQL script:
+
+```text
+database/Schooldbdump.sql
+```
+
+This script recreates the school database, including its tables, relationships, views and synthetic sample data.
+
+> [!WARNING]
+> The database dump contains a DROP SCHEMA statement.
+> Importing this script will delete any existing database named school.
+> Use an isolated development or testing environment.
+
+## User Configuration
+
+The optional user management script is available at:
+
+```text
+database/users.sql
+```
+
+Replace all password placeholders with strong, unique passwords before executing the script.
+
+The original implementation includes wildcard host access (%). These settings should be reviewed and restricted before any production deployment.
+
+## Usage
+
+After importing the database, select the school schema:
+
+```sql
+USE school;
+```
+
+Execute the individual SQL scripts located in the queries directory to explore academic records and reporting functionality.
+
+The original database model can also be opened directly in MySQL Workbench:
+
+```text
+models/School.mwb
+```
+
+## Academic Documentation
+
+The original database design report is available here:
+
+[School Database – Design Report (PDF)](docs/SchoolDB_team26_Corrected_public.pdf)
+
+The report includes requirements analysis, conceptual modeling, the Entity-Relationship diagram, relational schema, database views and relational algebra expressions.
+
+The original documentation is written in Greek.
+
+## Publication Note
+
+The original academic implementation has been preserved. Hardcoded passwords have been replaced with placeholders, and student registration numbers and university email addresses have been removed from the academic report for privacy protection.
+
+This project is intended for educational and demonstration purposes, rather than production deployment.
+
